@@ -13,7 +13,7 @@ public class PersonaRouter extends RouteBuilder {
     public void configure() throws Exception {
         from("direct:crearPersona")
                 .routeId("CrearPersona")
-                .process(new CreatePersonProcessor())
+                //.process(new CreatePersonProcessor())
                 .choice()
                 .when(simple("${body.tipotransaccion} == 'digital'"))
                 .marshal(jsonDataFormat)
